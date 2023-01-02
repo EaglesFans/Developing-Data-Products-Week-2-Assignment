@@ -1,0 +1,28 @@
+---
+title: "Developing_Data_Product_Week_2_Assignment"
+author: "Choong-Hoon Hyun"
+date: "2023-01-02"
+output: html_document
+---
+
+## Executive Summary
+We will creat a web page using R Markdown that features a map created with Leaflet. I will display four tourist attractions in Seoul with "popup" text describing the name of the attractions. 
+
+### Load leaflet package
+```{r load leaflet package, echo = TRUE}
+library(leaflet)
+```
+
+### Add markers to the map with popup text
+```{r}
+my_map <- leaflet() %>%
+    addTiles() %>%
+    addMarkers(lat = 37.5796, lng = 126.9770, popup = "Gyeongbookgung Palace") %>%
+    addMarkers(lat = 37.574331036, lng = 126.98832938, popup = "Changdeoggung Palace (Secret Garden)") %>%
+    addMarkers(lat = 37.5512, lng = 126.9882, popup = "Seoul Tower") %>%
+    addMarkers(lat = 37.5559, lng = 126.9723, popup = "Seoul Station")
+
+my_map
+```
+
+Four tourist attractions are displayed on an interactive map. They are Gyeongbookgung Palace, Changdeoggung Palace (Secret Garden), Seoul Tower, and Seoul Station.
